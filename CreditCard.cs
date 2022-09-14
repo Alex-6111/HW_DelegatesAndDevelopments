@@ -37,6 +37,12 @@ namespace HW_DelegatesAndDevelopments
         public bool IsUseCreditLimit()
         {
             return this.creditLimit == this.amontOfMoney;
+        } 
+        public void PinChange()
+        {
+            Write($"Enter new pin: ");
+            int tmp = Convert.ToInt32(ReadLine());
+            this.PIN = tmp;
         }
         public void СrediFunds()
         {
@@ -44,17 +50,11 @@ namespace HW_DelegatesAndDevelopments
             float sum = (float)Convert.ToDouble(ReadLine());
             this.amontOfMoney += sum;
         }
-        public void ChangePin()
-        {
-            Write($"Enter new pin: ");
-            int newPin = Convert.ToInt32(ReadLine());
-            this.PIN = newPin;
-        }
+       
 
         public override string ToString()
         {
             return $"Card number -> {cardNumber}\n FIO -> {FIO}\n Card expiry date -> {validity}\n Amount of money -> {amontOfMoney}";
-
         }
     }
 }
